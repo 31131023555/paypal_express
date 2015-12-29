@@ -1,0 +1,42 @@
+{
+  "url": "/api/v1/collections",
+  "method": "Post",
+  "1": {
+    "desc": "when user create success",
+    "request": {
+      "access_token": "dummy_access_token",
+      "name": "collection_name",
+      "type": "Collection::Group"
+    },
+    "response": {
+      "meta": {
+        "code": 201,
+        "status_code": ["CCS"]
+      },
+      "group": {
+        "id": 9,
+        "user_id": 1,
+        "name": "Test",
+        "users_count": 2,
+        "users_joined": [{
+          "id": 1,
+          "email": "abc@abc.com",
+          "name": "Name"
+        }]
+      }
+    }
+  },
+  "2": {
+    "desc": "when authenticate failure",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 401,
+        "status_code": ["601"],
+        "content": "Unauthorized"
+      }
+    }
+  }
+}

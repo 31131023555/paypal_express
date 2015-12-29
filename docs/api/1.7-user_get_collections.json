@@ -1,0 +1,41 @@
+{
+  "url": "/api/v1/users/me/collections",
+  "method": "GET",
+  "1": {
+    "desc": "when user authentication error",
+    "request": {"access_token": "dummy_access_token_fail"},
+    "response": {
+      "meta": {
+        "code": 401,
+        "status_code":["601"]
+      }
+    }
+  },
+  "2": {
+    "desc": "When get user collections successfuly",
+    "request": {
+      "access_token": "dummy_access_token"
+      },
+    "response": {
+      "collections":[
+        {
+          "id": 7,
+          "user_id": 1,
+          "name": "sfdsf",
+          "users_count": 1,
+          "is_admin": true,
+          "users_joined":[
+            {
+              "id": 1, "email": "abc@abc.com",
+              "name": "Name", "provider": "standard"
+            }
+          ]
+        }
+      ],
+      "meta":{
+        "status_code": ["UGCS"],
+        "code":200
+      }
+    }
+  }
+}

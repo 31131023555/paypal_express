@@ -1,0 +1,30 @@
+{
+  "url": "/api/v1/users/me",
+  "method": "GET",
+  "1": {
+    "desc": "when user authentication error",
+    "request": {"access_token": "dummy_access_token_fail"},
+    "response": {
+      "meta": {
+        "code": 401,
+        "status_code":["601"]
+      }
+    }
+  },
+  "2": {
+    "desc": "When get user detail successfuly",
+    "request": {
+      "access_token": "dummy_access_token"
+      },
+    "response": {
+      "user":{
+        "id": 1,
+        "mail_address": "user1@example.com"
+      },
+      "meta": {
+        "code": 200,
+        "status_code":["GU200"]
+      }
+    }
+  }
+}

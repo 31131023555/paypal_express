@@ -1,0 +1,55 @@
+{
+  "url": "/api/v1/collections/:id/remove_users",
+  "method": "put",
+  "1": {
+    "desc": "when remove users to collection success",
+    "request": {
+      "access_token": "dummy_access_token",
+      "ids": [2,3]
+    },
+  "response": {
+    "meta": {
+      "code": 200,
+      "status_code": ["CRMUS"]
+    },
+    "group": {
+      "id": 7,
+      "user_id": 1,
+      "name": "GroupName",
+      "users_count": 1,
+      "users_joined": [
+        {
+          "id": 1,
+          "email": "abc@abc.com",
+          "name": "Name"
+        }
+      ]
+    }
+  },
+  "2": {
+    "desc": "when authenticate failure",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 401,
+        "status_code": ["601"],
+        "content": "Unauthorized"
+      }
+    }
+  },
+  "3": {
+    "desc": "when collection not found or admin isn't admin of collection",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 404,
+        "status_code": ["604"],
+        "content": "404 Not Found"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "url": "/api/v1/sessions",
+  "method": "DELETE",
+  "1": {
+    "desc": "when user logout success",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 200,
+        "status_code": ["ULO200"]
+      }
+    }
+  },
+  "2": {
+    "desc": "when authenticate failure",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 401,
+        "status_code": ["601"],
+        "content": "Unauthorized"
+      }
+    }
+  }
+}

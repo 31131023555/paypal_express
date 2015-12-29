@@ -1,0 +1,43 @@
+{
+  "url": "/api/v1/collections/:id",
+  "method": "delete",
+  "1": {
+    "desc": "when user delete collection success",
+    "request": {
+      "access_token": "dummy_access_token",
+      "id": 1
+    },
+    "response": {
+      "meta": {
+        "code": 200,
+        "status_code": ["CDS"]
+      }
+    }
+  },
+  "2": {
+    "desc": "when authenticate failure",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 401,
+        "status_code": ["601"],
+        "content": "Unauthorized"
+      }
+    }
+  },
+  "3": {
+    "desc": "when collection not found or admin isn't admin of collection",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 404,
+        "status_code": ["604"],
+        "content": "404 Not Found"
+      }
+    }
+  }
+}

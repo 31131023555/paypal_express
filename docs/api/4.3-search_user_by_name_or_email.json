@@ -1,0 +1,37 @@
+{
+  "url": "/api/v1/users",
+  "method": "Get",
+  "1": {
+    "desc": "when user search success",
+    "request": {
+      "access_token": "dummy_access_token",
+      "search": "name_or_email"
+    },
+    "response": {
+      "meta": {
+        "code": 200,
+        "status_code": ["200"]
+      },
+      "users": [
+        {
+          "id": 1,
+          "email": "abc@abc.com",
+          "name": "Name"
+        }
+      ]
+    }
+  },
+  "2": {
+    "desc": "when authenticate failure",
+    "request": {
+      "access_token": "dummy_access_token"
+    },
+    "response": {
+      "meta": {
+        "code": 401,
+        "status_code": ["601"],
+        "content": "Unauthorized"
+      }
+    }
+  }
+}
